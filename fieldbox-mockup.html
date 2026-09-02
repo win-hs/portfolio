@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field-Box 田野調查百寶箱</title>
+<style>
+:root{
+  --paper:#F1F3EE;
+  --ink:#16231B;
+  --moss:#3E5C48;
+  --moss-soft:#7B9483;
+  --contour:#CBD6C8;
+  --tape:#E0A81E;
+  --rule:#D3DBCF;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+
+/* ---------- nav ---------- */
+.topbar{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:10}
+.topbar .wrap{display:flex;align-items:baseline;gap:32px;height:64px}
+.wordmark{font-weight:700;letter-spacing:.02em;text-decoration:none;font-size:17px}
+.wordmark span{color:var(--moss-soft);font-weight:500}
+.topnav{margin-left:auto;display:flex;gap:26px}
+.topnav a{text-decoration:none;color:var(--moss);font-size:15px;padding-bottom:2px;border-bottom:2px solid transparent}
+.topnav a:hover,.topnav a:focus-visible{border-bottom-color:var(--tape)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
+.hero svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;padding-top:96px;padding-bottom:88px;max-width:1040px}
+.hero h1{
+  font-family:"Songti TC","Noto Serif TC","PMingLiU",serif;
+  font-size:clamp(38px,6vw,62px);
+  line-height:1.15;
+  margin:0 0 22px;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+.hero p{max-width:34em;margin:0;font-size:17px;color:#38493E}
+.hero .coord{
+  margin-top:34px;font-size:13px;color:var(--moss-soft);
+  font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+
+/* ---------- section frame ---------- */
+section{padding:78px 0}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+.sec-head h2{
+  font-family:"Songti TC","Noto Serif TC","PMingLiU",serif;
+  font-size:29px;margin:0;font-weight:600;
+}
+.sec-head .count{font-size:14px;color:var(--moss-soft)}
+.sec-intro{margin:0 0 40px;color:#4A5B50;max-width:38em}
+
+/* ---------- tools ---------- */
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.tool{background:var(--paper);padding:26px 24px 24px;display:flex;flex-direction:column;min-height:186px;text-decoration:none}
+.tool:hover,.tool:focus-visible{background:#E8EDE5}
+.tool .mark{
+  width:30px;height:30px;border-radius:50%;
+  border:2px solid var(--moss);
+  display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:var(--moss);
+  margin-bottom:16px;
+}
+.tool h3{margin:0 0 4px;font-size:18px;font-weight:600}
+.tool .zh{color:var(--moss);font-size:14px;margin:0 0 12px}
+.tool p{margin:0;font-size:14.5px;color:#4A5B50;line-height:1.65}
+.tool .go{margin-top:auto;padding-top:16px;font-size:13.5px;color:var(--moss-soft)}
+.tool:hover .go{color:var(--ink)}
+
+/* ---------- course ---------- */
+.course{border-top:1px solid var(--rule);background:#EAEEE6}
+.course-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.unit{margin-bottom:34px}
+.unit h4{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--moss)}
+ol.lessons,ul.lessons{margin:0;padding:0;list-style:none}
+ol.lessons{counter-reset:lesson}
+ol.lessons li{counter-increment:lesson;position:relative;padding:7px 0 7px 34px;border-bottom:1px solid var(--rule);font-size:15px}
+ol.lessons li::before{
+  content:counter(lesson);
+  position:absolute;left:0;top:7px;
+  font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--moss-soft);
+}
+ul.lessons li{padding:7px 0 7px 34px;border-bottom:1px solid var(--rule);font-size:15px;position:relative}
+ul.lessons li::before{content:"·";position:absolute;left:12px;color:var(--tape);font-weight:700}
+.lessons a{text-decoration:none}
+.lessons a:hover{text-decoration:underline;text-decoration-color:var(--tape);text-underline-offset:3px}
+.callout{border-left:3px solid var(--tape);padding:14px 0 14px 18px;font-size:15px;color:#3B4C41}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);padding:48px 0 64px;font-size:14.5px;color:#4A5B50}
+footer strong{display:block;margin-bottom:8px;color:var(--ink)}
+footer a{color:var(--moss)}
+
+@media(max-width:760px){
+  .course-grid{grid-template-columns:1fr;gap:0}
+  .hero .wrap{padding-top:64px;padding-bottom:60px}
+  section{padding:56px 0}
+  .topnav{gap:18px}
+  .topnav a{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#">Field-Box <span>田野調查百寶箱</span></a>
+    <nav class="topnav">
+      <a href="#tools">工具</a>
+      <a href="#course">QGIS 課程</a>
+      <a href="#about">關於</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <svg viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#CBD6C8" stroke-width="1">
+      <path d="M-40 380 C 180 300, 320 420, 520 350 S 900 250, 1240 330"/>
+      <path d="M-40 340 C 190 258, 330 380, 530 306 S 900 205, 1240 288"/>
+      <path d="M-40 300 C 200 216, 340 340, 540 262 S 900 160, 1240 246"/>
+      <path d="M-40 260 C 210 174, 350 300, 550 218 S 900 115, 1240 204"/>
+      <path d="M-40 220 C 220 132, 360 260, 560 174 S 900 70, 1240 162"/>
+      <path d="M-40 180 C 230 90, 370 220, 570 130 S 900 25, 1240 120"/>
+      <path d="M-40 140 C 240 48, 380 180, 580 86 S 900 -20, 1240 78"/>
+    </g>
+    <g stroke="#E0A81E" stroke-width="1.5" fill="none">
+      <circle cx="1012" cy="182" r="7"/>
+      <path d="M1012 168 v-14 M1012 196 v14 M998 182 h-14 M1026 182 h14"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <h1>野外用得上的<br>小工具與教學</h1>
+    <p>座標轉換、無線電追蹤定位、照片點位標記，全部在瀏覽器裡跑。免安裝、免註冊，資料不會離開你的電腦或手機。</p>
+    <div class="coord">TWD97 / WGS84 · 開放原始碼 · 由生態調查現場需求長出來的工具</div>
+  </div>
+</div>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>工具</h2>
+      <span class="count">五項，持續增加中</span>
+    </div>
+    <p class="sec-intro">每個工具都是獨立的網頁，開了就能用。手機在野外也跑得動。</p>
+
+    <div class="tools">
+      <a class="tool" href="/gotime">
+        <div class="mark">G</div>
+        <h3>GoTime</h3>
+        <p class="zh">開工吉時</p>
+        <p>查詢適合動工的日期與時辰。</p>
+        <div class="go">開啟工具</div>
+      </a>
+
+      <a class="tool" href="/coordinate-converter/">
+        <div class="mark">C</div>
+        <h3>Coord-Converter</h3>
+        <p class="zh">座標批次轉換</p>
+        <p>TWD97 二度分帶與 WGS84 經緯度互轉，支援整份 CSV 一次處理。</p>
+        <div class="go">開啟工具</div>
+      </a>
+
+      <a class="tool" href="/triangulation/">
+        <div class="mark">T</div>
+        <h3>Triangulation</h3>
+        <p class="zh">三角定位</p>
+        <p>輸入接收點位與方位角，推算追蹤個體的所在位置。</p>
+        <div class="go">開啟工具</div>
+      </a>
+
+      <a class="tool" href="/batch-triangulation/">
+        <div class="mark">B</div>
+        <h3>BatchTriangulation</h3>
+        <p class="zh">批次三角定位</p>
+        <p>一次處理整季的無線電追蹤紀錄，輸出可直接匯入 QGIS 的點位檔。</p>
+        <div class="go">開啟工具</div>
+      </a>
+
+      <a class="tool" href="/mappin/">
+        <div class="mark">M</div>
+        <h3>Mappin</h3>
+        <p class="zh">照片地圖標記</p>
+        <p>讀取照片內的 GPS 資訊，把拍攝地點標到地圖上。</p>
+        <div class="go">開啟工具</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="course" id="course">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>QGIS 課程平台</h2>
+      <span class="count">野生動物保育所</span>
+    </div>
+    <p class="sec-intro">從安裝到出圖的完整教學，附課程簡報與練習資料。照著做就能完成一張可以放進報告的地圖。</p>
+
+    <div class="course-grid">
+      <div>
+        <div class="unit">
+          <h4>入門基礎</h4>
+          <ol class="lessons">
+            <li><a href="#">下載、安裝及開啟 QGIS</a></li>
+            <li><a href="#">常用設定</a></li>
+            <li><a href="#">加入向量、網格、圖磚圖層</a></li>
+            <li><a href="#">更改圖層座標格式（CRS）</a></li>
+            <li><a href="#">更改圖層的文字編碼</a></li>
+            <li><a href="#">自訂圖徵樣式與標記</a></li>
+            <li><a href="#">地圖排版及輸出</a></li>
+            <li><a href="#">用 DEM 製作等高線、坡度、坡向與日照陰影</a></li>
+            <li><a href="#">加入指北針、圖例、比例尺</a></li>
+            <li><a href="#">安裝外掛</a></li>
+            <li><a href="#">把 Excel 或 CSV 資料匯入 QGIS</a></li>
+            <li><a href="#">只輸出選擇的圖徵或圖層</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <div>
+        <div class="unit">
+          <h4>實用技巧</h4>
+          <ul class="lessons">
+            <li><a href="#">把 Google Map 底圖加入 QGIS</a></li>
+            <li><a href="#">用 Quick Map Services 加入 OSM 底圖</a></li>
+            <li><a href="#">地圖排版加入經緯度格線</a></li>
+            <li><a href="#">Point Sampling Tool：萃取點位數值</a></li>
+            <li><a href="#">Animove：MCP 與核密度估計繪製活動範圍</a></li>
+          </ul>
+        </div>
+
+        <div class="unit">
+          <h4>上課資源</h4>
+          <ul class="lessons">
+            <li><a href="#">上課前須知</a></li>
+            <li><a href="#">課程簡報與練習資料下載</a></li>
+            <li><a href="#">常見問題</a></li>
+            <li><a href="#">學習資源、開放圖資與小工具整理</a></li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          第一次上課？先看「上課前須知」把環境裝好，可以省下課堂上一半的時間。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap">
+    <strong>關於 Field-Box</strong>
+    <p style="margin:0 0 14px;max-width:40em">
+      這些工具來自實際的生態調查工作：需要什麼就寫什麼，寫完順手放上來給同樣需要的人用。全部在瀏覽器端運算，不上傳、不留存任何資料。
+    </p>
+    <p style="margin:0">
+      發現問題或有功能想法，寄信給我：<a href="mailto:a.wen90@gmail.com">a.wen90@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

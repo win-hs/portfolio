@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <svg viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#CBD6C8" stroke-width="1">
+      <path d="M-40 380 C 180 300, 320 420, 520 350 S 900 250, 1240 330"/>
+      <path d="M-40 340 C 190 258, 330 380, 530 306 S 900 205, 1240 288"/>
+      <path d="M-40 300 C 200 216, 340 340, 540 262 S 900 160, 1240 246"/>
+      <path d="M-40 260 C 210 174, 350 300, 550 218 S 900 115, 1240 204"/>
+      <path d="M-40 220 C 220 132, 360 260, 560 174 S 900 70, 1240 162"/>
+      <path d="M-40 180 C 230 90, 370 220, 570 130 S 900 25, 1240 120"/>
+      <path d="M-40 140 C 240 48, 380 180, 580 86 S 900 -20, 1240 78"/>
+    </g>
+    <g stroke="#E0A81E" stroke-width="1.5" fill="none">
+      <circle cx="1012" cy="182" r="7"/>
+      <path d="M1012 168 v-14 M1012 196 v14 M998 182 h-14 M1026 182 h14"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <h1>野外用得上的<br>小工具與教學</h1>
+    <p>座標轉換、無線電追蹤定位、照片點位標記，全部在瀏覽器裡跑。免安裝、免註冊，資料不會離開你的電腦或手機。</p>
+    <div class="coord">TWD97 / WGS84 · 開放原始碼 · 由生態調查現場需求長出來的工具</div>
+  </div>
+</div>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>工具</h2>
+      <span class="count">五項，持續增加中</span>
+    </div>
+    <p class="sec-intro">每個工具都是獨立的網頁，開了就能用。手機在野外也跑得動。</p>
+
+    <div class="tools">
+      {% for tool in site.data.tools %}
+      <a class="tool" href="{{ tool.url }}">
+        <div class="mark">{{ tool.mark }}</div>
+        <h3>{{ tool.name }}</h3>
+        <p class="zh">{{ tool.zh }}</p>
+        <p>{{ tool.desc }}</p>
+        <div class="go">開啟工具</div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="course" id="course">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>QGIS 課程平台</h2>
+      <span class="count">野生動物保育所</span>
+    </div>
+    <p class="sec-intro">從安裝到出圖的完整教學，附課程簡報與練習資料。照著做就能完成一張可以放進報告的地圖。</p>
+
+    <div class="course-grid">
+      <div>
+        <div class="unit">
+          <h4>入門基礎</h4>
+          <ol class="lessons">
+            {% for lesson in site.data.course.basics %}
+            <li><a href="{{ lesson.url }}">{{ lesson.title }}</a></li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+
+      <div>
+        <div class="unit">
+          <h4>實用技巧</h4>
+          <ul class="lessons">
+            {% for lesson in site.data.course.skills %}
+            <li><a href="{{ lesson.url }}">{{ lesson.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="unit">
+          <h4>上課資源</h4>
+          <ul class="lessons">
+            {% for lesson in site.data.course.resources %}
+            <li><a href="{{ lesson.url }}">{{ lesson.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="callout">
+          第一次上課？先看「上課前須知」把環境裝好，可以省下課堂上一半的時間。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

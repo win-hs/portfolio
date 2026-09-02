@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }} {{ site.description }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="{{ site.baseurl }}/">{{ site.title }} <span>{{ site.description }}</span></a>
+    <nav class="topnav">
+      <a href="#tools">工具</a>
+      <a href="#course">QGIS 課程</a>
+      <a href="#about">關於</a>
+    </nav>
+  </div>
+</div>
+
+{{ content }}
+
+<footer id="about">
+  <div class="wrap">
+    <strong>關於 Field-Box</strong>
+    <p class="about-text">
+      這些工具來自實際的生態調查工作：需要什麼就寫什麼，寫完順手放上來給同樣需要的人用。全部在瀏覽器端運算，不上傳、不留存任何資料。
+    </p>
+    <p class="about-contact">
+      發現問題或有功能想法，寄信給我：<a href="mailto:a.wen90@gmail.com">a.wen90@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
