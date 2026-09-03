@@ -3,7 +3,12 @@ description: 田野調查百寶箱
 url: "https://win-hs.github.io"
 baseurl: "/portfolio"
 
+collections:
+  lessons:
+    output: true
+
 exclude:
   - README.md
   - fieldbox-build-spec.md
   - fieldbox-mockup.html
+  - tools/

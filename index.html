@@ -51,45 +51,9 @@ layout: default
   <div class="wrap">
     <div class="sec-head">
       <h2>QGIS 課程平台</h2>
-      <span class="count">野生動物保育所</span>
+      <span class="count">野生動物保育所 · {{ site.lessons | size }} 篇</span>
     </div>
     <p class="sec-intro">從安裝到出圖的完整教學，附課程簡報與練習資料。照著做就能完成一張可以放進報告的地圖。</p>
-
-    <div class="course-grid">
-      <div>
-        <div class="unit">
-          <h4>入門基礎</h4>
-          <ol class="lessons">
-            {% for lesson in site.data.course.basics %}
-            <li><a href="{{ lesson.url }}">{{ lesson.title }}</a></li>
-            {% endfor %}
-          </ol>
-        </div>
-      </div>
-
-      <div>
-        <div class="unit">
-          <h4>實用技巧</h4>
-          <ul class="lessons">
-            {% for lesson in site.data.course.skills %}
-            <li><a href="{{ lesson.url }}">{{ lesson.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div class="unit">
-          <h4>上課資源</h4>
-          <ul class="lessons">
-            {% for lesson in site.data.course.resources %}
-            <li><a href="{{ lesson.url }}">{{ lesson.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div class="callout">
-          第一次上課？先看「上課前須知」把環境裝好，可以省下課堂上一半的時間。
-        </div>
-      </div>
-    </div>
+    <p class="more"><a href="{{ site.baseurl }}/qgis/">查看課程目錄 →</a></p>
   </div>
 </section>

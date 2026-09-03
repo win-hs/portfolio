@@ -79,7 +79,7 @@ section{padding:78px 0}
 .course{border-top:1px solid var(--rule);background:#EAEEE6}
 .course-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .unit{margin-bottom:34px}
-.unit h4{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--moss)}
+.unit h2{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--moss)}
 ol.lessons,ul.lessons{margin:0;padding:0;list-style:none}
 ol.lessons{counter-reset:lesson}
 ol.lessons li{counter-increment:lesson;position:relative;padding:7px 0 7px 34px;border-bottom:1px solid var(--rule);font-size:15px}
@@ -109,3 +109,79 @@ footer a{color:var(--moss)}
   .topnav a{font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- page header (課程專頁) ---------- */
+.pagehead{background:#EAEEE6;border-bottom:1px solid var(--rule);padding:64px 0 56px}
+.pagehead h1{
+  font-family:"Songti TC","Noto Serif TC","PMingLiU",serif;
+  font-size:clamp(30px,4.4vw,42px);line-height:1.2;margin:0 0 18px;font-weight:600;
+}
+.pagehead .lede{margin:0;max-width:36em;font-size:17px;color:#38493E}
+.pagehead .coord{
+  margin-top:26px;font-size:13px;color:var(--moss-soft);
+  font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+.more{margin:0}
+.more a{color:var(--moss);text-decoration:none;border-bottom:2px solid var(--tape);padding-bottom:2px}
+.more a:hover,.more a:focus-visible{color:var(--ink)}
+
+/* ---------- lesson page ---------- */
+.lesson{padding:44px 0 88px}
+.crumb{font-size:13.5px;color:var(--moss-soft);margin-bottom:34px}
+.crumb a{color:var(--moss);text-decoration:none;border-bottom:1px solid transparent}
+.crumb a:hover,.crumb a:focus-visible{border-bottom-color:var(--tape)}
+.crumb span{margin:0 2px}
+
+.prose{max-width:780px;overflow-wrap:break-word}
+.prose h1{
+  font-family:"Songti TC","Noto Serif TC","PMingLiU",serif;
+  font-size:clamp(26px,3.6vw,36px);line-height:1.25;margin:0 0 32px;font-weight:600;
+}
+.prose h2{font-size:20px;margin:40px 0 12px;font-weight:600}
+.prose h3{font-size:17px;margin:32px 0 10px;font-weight:600}
+.prose p{margin:0 0 14px}
+.prose ul,.prose ol{margin:0 0 14px;padding-left:1.6em}
+.prose li{margin-bottom:6px}
+.prose img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);margin:18px 0 8px}
+.prose a{color:var(--moss);text-decoration:underline;text-decoration-color:var(--contour);text-underline-offset:3px}
+.prose a:hover,.prose a:focus-visible{text-decoration-color:var(--tape)}
+.prose code{
+  font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
+  font-size:.88em;background:#E4E9E0;padding:1px 5px;
+}
+.prose blockquote{margin:18px 0;padding-left:18px;border-left:3px solid var(--contour);color:#4A5B50}
+.prose blockquote h3{margin-top:0}
+.prose .callout{margin:20px 0}
+.prose hr{border:0;border-top:1px solid var(--rule);margin:36px 0}
+
+/* 摺疊區塊 */
+.prose details{border-top:1px solid var(--rule);margin:0}
+.prose details:last-of-type{border-bottom:1px solid var(--rule)}
+.prose summary{
+  cursor:pointer;padding:14px 0 14px 26px;position:relative;
+  font-weight:600;font-size:15.5px;color:var(--moss);list-style:none;
+}
+.prose summary::-webkit-details-marker{display:none}
+.prose summary::before{
+  content:"+";position:absolute;left:4px;top:14px;
+  font-family:ui-monospace,Menlo,monospace;color:var(--tape);font-weight:700;
+}
+.prose details[open] summary::before{content:"−"}
+.prose summary:hover,.prose summary:focus-visible{color:var(--ink)}
+.prose details[open]{padding-bottom:18px}
+
+/* 上一課／下一課 */
+.lesson-nav{display:flex;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:64px;max-width:780px}
+.pn{flex:1;background:var(--paper);padding:18px 20px;text-decoration:none;display:block}
+.pn:hover,.pn:focus-visible{background:#E8EDE5}
+.pn .dir{display:block;font-size:12.5px;color:var(--moss-soft);margin-bottom:4px}
+.pn .t{display:block;font-size:15px;color:var(--moss)}
+.pn:hover .t{color:var(--ink)}
+.pn.next{text-align:right}
+
+@media(max-width:760px){
+  .pagehead{padding:44px 0 40px}
+  .lesson{padding:32px 0 64px}
+  .lesson-nav{flex-direction:column}
+  .pn.next{text-align:left}
+}

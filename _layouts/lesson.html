@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% assign unit = site.data.units | where: "key", page.unit | first %}
+{% assign siblings = site.lessons | where: "unit", page.unit | sort: "order" %}
+{% assign idx = 0 %}
+{% for l in siblings %}{% if l.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+{% assign pi = idx | minus: 1 %}
+{% assign ni = idx | plus: 1 %}
+
+<article class="lesson">
+  <div class="wrap">
+    <nav class="crumb">
+      <a href="{{ site.baseurl }}/qgis/">QGIS 課程</a>
+      <span>／</span>
+      <span>{{ unit.name }}{% if unit.ordered %} 第 {{ page.order }} 課{% endif %}</span>
+    </nav>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    <nav class="lesson-nav">
+      {% if idx > 0 %}{% assign prev = siblings[pi] %}
+      <a class="pn prev" href="{{ site.baseurl }}{{ prev.url }}">
+        <span class="dir">上一課</span>
+        <span class="t">{{ prev.title }}</span>
+      </a>
+      {% endif %}
+      {% if ni < siblings.size %}{% assign next = siblings[ni] %}
+      <a class="pn next" href="{{ site.baseurl }}{{ next.url }}">
+        <span class="dir">下一課</span>
+        <span class="t">{{ next.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+  </div>
+</article>

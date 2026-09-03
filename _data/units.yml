@@ -1,0 +1,14 @@
+- key: basics
+  name: 入門基礎
+  ordered: true
+  column: 1
+
+- key: skills
+  name: 實用技巧
+  ordered: false
+  column: 2
+
+- key: resources
+  name: 上課資源
+  ordered: false
+  column: 2

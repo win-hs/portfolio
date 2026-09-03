@@ -1,0 +1,49 @@
+---
+layout: default
+title: QGIS 課程平台
+permalink: /qgis/
+---
+
+<div class="pagehead">
+  <div class="wrap">
+    <h1>QGIS 課程平台</h1>
+    <p class="lede">從安裝到出圖的完整教學，附課程簡報與練習資料。照著做就能完成一張可以放進報告的地圖。</p>
+    <div class="coord">野生動物保育所 · 共 {{ site.lessons | size }} 篇</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="course-grid">
+      {% for col in (1..2) %}
+      <div>
+        {% for unit in site.data.units %}{% if unit.column == col %}
+        {% assign items = site.lessons | where: "unit", unit.key | sort: "order" %}
+        <div class="unit">
+          <h2>{{ unit.name }}</h2>
+          {% if unit.ordered %}
+          <ol class="lessons">
+            {% for l in items %}
+            <li><a href="{{ site.baseurl }}{{ l.url }}">{{ l.title }}</a></li>
+            {% endfor %}
+          </ol>
+          {% else %}
+          <ul class="lessons">
+            {% for l in items %}
+            <li><a href="{{ site.baseurl }}{{ l.url }}">{{ l.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endif %}{% endfor %}
+
+        {% if col == 2 %}
+        <div class="callout">
+          第一次上課？先看「上課前須知」把環境裝好，可以省下課堂上一半的時間。
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

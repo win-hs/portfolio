@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ site.title }} {{ site.description }}</title>
+<title>{% if page.title %}{{ page.title }}｜{{ site.title }}{% else %}{{ site.title }} {{ site.description }}{% endif %}</title>
 <meta name="description" content="{{ site.description }}">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
@@ -13,9 +13,9 @@
   <div class="wrap">
     <a class="wordmark" href="{{ site.baseurl }}/">{{ site.title }} <span>{{ site.description }}</span></a>
     <nav class="topnav">
-      <a href="#tools">工具</a>
-      <a href="#course">QGIS 課程</a>
-      <a href="#about">關於</a>
+      <a href="{{ site.baseurl }}/">作品</a>
+      <a href="{{ site.baseurl }}/qgis/">QGIS 課程</a>
+      <a href="{{ site.baseurl }}/#about">關於</a>
     </nav>
   </div>
 </div>
