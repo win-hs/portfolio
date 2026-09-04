@@ -1,5 +1,6 @@
 ---
 layout: lesson
+theme: dark
 title: 用 Quick Map Services 加入 OSM 底圖
 unit: skills
 order: 2

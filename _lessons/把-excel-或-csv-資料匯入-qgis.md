@@ -1,5 +1,6 @@
 ---
 layout: lesson
+theme: dark
 title: 把 Excel 或 CSV 資料匯入 QGIS
 unit: basics
 order: 11

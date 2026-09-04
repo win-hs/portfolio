@@ -1,17 +1,36 @@
-:root{
-  --paper:#F1F3EE;
+/* ---------- design tokens ---------- */
+.theme-light{
+  --bg:#FFFFFF;
+  --panel:#F4F6F1;
   --ink:#16231B;
+  --body:#4A5B50;
   --moss:#3E5C48;
   --moss-soft:#7B9483;
-  --contour:#CBD6C8;
+  --rule:#E1E6DD;
   --tape:#E0A81E;
-  --rule:#D3DBCF;
+  --contour:#E89A57;
+  --contour-solid:#3B62C0;
+  --hover:#F1F4EE;
 }
+.theme-dark{
+  --bg:#0E1110;
+  --panel:#171D19;
+  --ink:#E9EEE7;
+  --body:#A7B5AB;
+  --moss:#9FBCA8;
+  --moss-soft:#7C8F83;
+  --rule:#252C28;
+  --tape:#E0A81E;
+  --contour:#8A6438;
+  --contour-solid:#43619E;
+  --hover:#1B221D;
+}
+
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
-  background:var(--paper);
+  background:var(--bg);
   color:var(--ink);
   font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:16px;
@@ -21,8 +40,18 @@ body{
 a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
 
+/* ---------- 背景等高線 ---------- */
+.contours{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.contours svg{position:absolute;width:min(34vw,420px);height:auto}
+.contours .tl{top:64px;left:0}
+.contours .br{bottom:0;right:0}
+.contours .dash{fill:none;stroke:var(--contour);stroke-width:1.4;stroke-dasharray:8 7;opacity:.6}
+.contours .solid{fill:none;stroke:var(--contour-solid);stroke-width:2;opacity:.55}
+
+.topbar,.hero,section,article,footer{position:relative;z-index:1}
+
 /* ---------- nav ---------- */
-.topbar{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:10}
+.topbar{border-bottom:1px solid var(--rule);background:var(--bg);position:sticky;top:0;z-index:10}
 .topbar .wrap{display:flex;align-items:baseline;gap:32px;height:64px}
 .wordmark{font-weight:700;letter-spacing:.02em;text-decoration:none;font-size:17px}
 .wordmark span{color:var(--moss-soft);font-weight:500}
@@ -31,18 +60,14 @@ a{color:inherit}
 .topnav a:hover,.topnav a:focus-visible{border-bottom-color:var(--tape)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
-.hero svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero .wrap{position:relative;padding-top:96px;padding-bottom:88px;max-width:1040px}
+.hero{border-bottom:1px solid var(--rule)}
+.hero .wrap{padding-top:96px;padding-bottom:88px}
 .hero h1{
   font-family:"Songti TC","Noto Serif TC","PMingLiU",serif;
   font-size:clamp(38px,6vw,62px);
-  line-height:1.15;
-  margin:0 0 22px;
-  font-weight:600;
-  letter-spacing:.01em;
+  line-height:1.15;margin:0 0 22px;font-weight:600;letter-spacing:.01em;
 }
-.hero p{max-width:34em;margin:0;font-size:17px;color:#38493E}
+.hero p{max-width:34em;margin:0;font-size:17px;color:var(--body)}
 .hero .coord{
   margin-top:34px;font-size:13px;color:var(--moss-soft);
   font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -56,27 +81,26 @@ section{padding:78px 0}
   font-size:29px;margin:0;font-weight:600;
 }
 .sec-head .count{font-size:14px;color:var(--moss-soft)}
-.sec-intro{margin:0 0 40px;color:#4A5B50;max-width:38em}
+.sec-intro{margin:0 0 40px;color:var(--body);max-width:38em}
 
 /* ---------- tools ---------- */
 .tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.tool{background:var(--paper);padding:26px 24px 24px;display:flex;flex-direction:column;min-height:186px;text-decoration:none}
-.tool:hover,.tool:focus-visible{background:#E8EDE5}
+.tool{background:var(--bg);padding:26px 24px 24px;display:flex;flex-direction:column;min-height:186px;text-decoration:none}
+.tool:hover,.tool:focus-visible{background:var(--hover)}
 .tool .mark{
   width:30px;height:30px;border-radius:50%;
   border:2px solid var(--moss);
   display:grid;place-items:center;
-  font-size:12px;font-weight:700;color:var(--moss);
-  margin-bottom:16px;
+  font-size:12px;font-weight:700;color:var(--moss);margin-bottom:16px;
 }
 .tool h3{margin:0 0 4px;font-size:18px;font-weight:600}
 .tool .zh{color:var(--moss);font-size:14px;margin:0 0 12px}
-.tool p{margin:0;font-size:14.5px;color:#4A5B50;line-height:1.65}
+.tool p{margin:0;font-size:14.5px;color:var(--body);line-height:1.65}
 .tool .go{margin-top:auto;padding-top:16px;font-size:13.5px;color:var(--moss-soft)}
 .tool:hover .go,.tool:focus-visible .go{color:var(--ink)}
 
 /* ---------- course ---------- */
-.course{border-top:1px solid var(--rule);background:#EAEEE6}
+.course{border-top:1px solid var(--rule);background:var(--panel)}
 .course-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .unit{margin-bottom:34px}
 .unit h2{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--moss)}
@@ -84,39 +108,22 @@ ol.lessons,ul.lessons{margin:0;padding:0;list-style:none}
 ol.lessons{counter-reset:lesson}
 ol.lessons li{counter-increment:lesson;position:relative;padding:7px 0 7px 34px;border-bottom:1px solid var(--rule);font-size:15px}
 ol.lessons li::before{
-  content:counter(lesson);
-  position:absolute;left:0;top:7px;
+  content:counter(lesson);position:absolute;left:0;top:7px;
   font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--moss-soft);
 }
 ul.lessons li{padding:7px 0 7px 34px;border-bottom:1px solid var(--rule);font-size:15px;position:relative}
-ul.lessons li::before{content:"·";position:absolute;left:12px;color:var(--tape);font-weight:700}
+ul.lessons li::before{content:"\00B7";position:absolute;left:12px;color:var(--tape);font-weight:700}
 .lessons a{text-decoration:none}
 .lessons a:hover,.lessons a:focus-visible{text-decoration:underline;text-decoration-color:var(--tape);text-underline-offset:3px}
-.callout{border-left:3px solid var(--tape);padding:14px 0 14px 18px;font-size:15px;color:#3B4C41}
+.callout{border-left:3px solid var(--tape);padding:14px 0 14px 18px;font-size:15px;color:var(--body)}
 
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--rule);padding:48px 0 64px;font-size:14.5px;color:#4A5B50}
-footer strong{display:block;margin-bottom:8px;color:var(--ink)}
-footer a{color:var(--moss)}
-.about-text{margin:0 0 14px;max-width:40em}
-.about-contact{margin:0}
-
-@media(max-width:760px){
-  .course-grid{grid-template-columns:1fr;gap:0}
-  .hero .wrap{padding-top:64px;padding-bottom:60px}
-  section{padding:56px 0}
-  .topnav{gap:18px}
-  .topnav a{font-size:14px}
-}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-
-/* ---------- page header (課程專頁) ---------- */
-.pagehead{background:#EAEEE6;border-bottom:1px solid var(--rule);padding:64px 0 56px}
+/* ---------- page header ---------- */
+.pagehead{background:var(--panel);border-bottom:1px solid var(--rule);padding:64px 0 56px}
 .pagehead h1{
   font-family:"Songti TC","Noto Serif TC","PMingLiU",serif;
   font-size:clamp(30px,4.4vw,42px);line-height:1.2;margin:0 0 18px;font-weight:600;
 }
-.pagehead .lede{margin:0;max-width:36em;font-size:17px;color:#38493E}
+.pagehead .lede{margin:0;max-width:36em;font-size:17px;color:var(--body)}
 .pagehead .coord{
   margin-top:26px;font-size:13px;color:var(--moss-soft);
   font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -125,7 +132,7 @@ footer a{color:var(--moss)}
 .more a{color:var(--moss);text-decoration:none;border-bottom:2px solid var(--tape);padding-bottom:2px}
 .more a:hover,.more a:focus-visible{color:var(--ink)}
 
-/* ---------- lesson page ---------- */
+/* ---------- lesson ---------- */
 .lesson{padding:44px 0 88px}
 .crumb{font-size:13.5px;color:var(--moss-soft);margin-bottom:34px}
 .crumb a{color:var(--moss);text-decoration:none;border-bottom:1px solid transparent}
@@ -139,22 +146,21 @@ footer a{color:var(--moss)}
 }
 .prose h2{font-size:20px;margin:40px 0 12px;font-weight:600}
 .prose h3{font-size:17px;margin:32px 0 10px;font-weight:600}
-.prose p{margin:0 0 14px}
-.prose ul,.prose ol{margin:0 0 14px;padding-left:1.6em}
+.prose p{margin:0 0 14px;color:var(--body)}
+.prose ul,.prose ol{margin:0 0 14px;padding-left:1.6em;color:var(--body)}
 .prose li{margin-bottom:6px}
 .prose img{display:block;max-width:100%;height:auto;border:1px solid var(--rule);margin:18px 0 8px}
-.prose a{color:var(--moss);text-decoration:underline;text-decoration-color:var(--contour);text-underline-offset:3px}
+.prose a{color:var(--moss);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
 .prose a:hover,.prose a:focus-visible{text-decoration-color:var(--tape)}
 .prose code{
   font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
-  font-size:.88em;background:#E4E9E0;padding:1px 5px;
+  font-size:.88em;background:var(--panel);color:var(--ink);padding:1px 5px;
 }
-.prose blockquote{margin:18px 0;padding-left:18px;border-left:3px solid var(--contour);color:#4A5B50}
-.prose blockquote h3{margin-top:0}
+.prose blockquote{margin:18px 0;padding-left:18px;border-left:3px solid var(--rule);color:var(--body)}
+.prose blockquote h3{margin-top:0;color:var(--ink)}
 .prose .callout{margin:20px 0}
 .prose hr{border:0;border-top:1px solid var(--rule);margin:36px 0}
 
-/* 摺疊區塊 */
 .prose details{border-top:1px solid var(--rule);margin:0}
 .prose details:last-of-type{border-bottom:1px solid var(--rule)}
 .prose summary{
@@ -166,22 +172,37 @@ footer a{color:var(--moss)}
   content:"+";position:absolute;left:4px;top:14px;
   font-family:ui-monospace,Menlo,monospace;color:var(--tape);font-weight:700;
 }
-.prose details[open] summary::before{content:"−"}
+.prose details[open] summary::before{content:"\2212"}
 .prose summary:hover,.prose summary:focus-visible{color:var(--ink)}
 .prose details[open]{padding-bottom:18px}
 
-/* 上一課／下一課 */
 .lesson-nav{display:flex;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:64px;max-width:780px}
-.pn{flex:1;background:var(--paper);padding:18px 20px;text-decoration:none;display:block}
-.pn:hover,.pn:focus-visible{background:#E8EDE5}
+.pn{flex:1;background:var(--bg);padding:18px 20px;text-decoration:none;display:block}
+.pn:hover,.pn:focus-visible{background:var(--hover)}
 .pn .dir{display:block;font-size:12.5px;color:var(--moss-soft);margin-bottom:4px}
 .pn .t{display:block;font-size:15px;color:var(--moss)}
 .pn:hover .t{color:var(--ink)}
 .pn.next{text-align:right}
 
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);padding:48px 0 64px;font-size:14.5px;color:var(--body)}
+footer strong{display:block;margin-bottom:8px;color:var(--ink)}
+footer a{color:var(--moss)}
+.about-text{margin:0 0 14px;max-width:40em}
+.about-contact{margin:0}
+
+@media(max-width:860px){
+  .contours svg{width:min(52vw,300px);opacity:.45}
+}
 @media(max-width:760px){
+  .course-grid{grid-template-columns:1fr;gap:0}
+  .hero .wrap{padding-top:64px;padding-bottom:60px}
+  section{padding:56px 0}
   .pagehead{padding:44px 0 40px}
   .lesson{padding:32px 0 64px}
   .lesson-nav{flex-direction:column}
   .pn.next{text-align:left}
+  .topnav{gap:18px}
+  .topnav a{font-size:14px}
 }
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

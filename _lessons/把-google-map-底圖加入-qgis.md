@@ -1,5 +1,6 @@
 ---
 layout: lesson
+theme: dark
 title: 把 Google Map 底圖加入 QGIS
 unit: skills
 order: 1
