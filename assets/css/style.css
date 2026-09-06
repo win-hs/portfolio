@@ -11,6 +11,7 @@
   --contour:#E89A57;
   --contour-solid:#3B62C0;
   --hover:#F1F4EE;
+  --footer-bg:#E1E6DD;
 }
 .theme-dark{
   --bg:#0E1110;
@@ -24,6 +25,7 @@
   --contour:#8A6438;
   --contour-solid:#43619E;
   --hover:#1B221D;
+  --footer-bg:#171D19;
 }
 
 *{box-sizing:border-box}
@@ -54,8 +56,6 @@ a{color:inherit}
 /* ---------- nav ---------- */
 .topbar{border-bottom:1px solid var(--rule);background:var(--bg);position:sticky;top:0;z-index:10}
 .topbar .wrap{display:flex;align-items:baseline;gap:32px;height:64px}
-.wordmark{font-weight:700;letter-spacing:.02em;text-decoration:none;font-size:17px}
-.wordmark span{color:var(--moss-soft);font-weight:500}
 .topnav{margin-left:auto;display:flex;gap:26px}
 .topnav a{text-decoration:none;color:var(--moss);font-size:15px;padding-bottom:2px;border-bottom:2px solid transparent}
 .topnav a:hover,.topnav a:focus-visible{border-bottom-color:var(--tape)}
@@ -63,7 +63,7 @@ a{color:inherit}
 /* ---------- hero ---------- */
 .hero{
   border-bottom:1px solid var(--rule);
-  background:#DEE4D9 url("../img/hero-toolbox.webp") right bottom / auto 86% no-repeat;
+  background:#DDE6DC url("../img/hero-toolbox.webp") right center / auto 92% no-repeat;
   padding:70px 0;
 }
 .hero h1{
@@ -91,7 +91,7 @@ section{padding:78px 0}
 .tool h2{margin:0 0 10px;font-size:17px;font-weight:600;line-height:1.4}
 .tool p{margin:0;font-size:14.5px;color:var(--body);line-height:1.65}
 .tool .go{
-  margin-top:auto;align-self:flex-start;
+  margin-top:auto;align-self:flex-end;
   padding:7px 18px;font-size:13.5px;
   border:1px solid var(--moss);color:var(--moss);background:transparent;
 }
@@ -183,7 +183,7 @@ ul.lessons li::before{content:"\00B7";position:absolute;left:12px;color:var(--ta
 .pn.next{text-align:right}
 
 /* ---------- footer ---------- */
-footer{border-top:1px solid var(--rule);padding:48px 0 64px;font-size:14.5px;color:var(--body)}
+footer{border-top:1px solid var(--rule);background:var(--footer-bg);padding:48px 0 64px;font-size:14.5px;color:var(--body)}
 footer strong{display:block;margin-bottom:8px;color:var(--ink)}
 footer a{color:var(--moss)}
 .about-text{margin:0 0 14px;max-width:40em}
@@ -194,7 +194,7 @@ footer a{color:var(--moss)}
 }
 @media(max-width:760px){
   .course-grid{grid-template-columns:1fr;gap:0}
-  .hero{padding:44px 0;background-size:auto 40%}
+  .hero{padding:44px 0;background-size:auto 66%}
   .hero h1{max-width:6.5em}
   section{padding:56px 0}
   .pagehead{padding:44px 0 40px}
