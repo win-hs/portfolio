@@ -19,7 +19,7 @@
 - logo: batch-triangulation.png
   name: BatchTriangulation
   zh: 批次三角定位
-  desc: 匯入接受點位與方位角的csv檔案，推算出所有位置。
+  desc: 匯入接收點位與方位角的csv檔案，推算出所有位置。
   url: /batch-triangulation/
 
 - logo: mappin.png
