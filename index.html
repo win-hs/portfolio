@@ -5,41 +5,21 @@ theme: light
 
 <div class="hero">
   <div class="wrap">
-    <h1>野外用得上的<br>小工具與教學</h1>
-    <p>座標轉換、無線電追蹤定位、照片點位標記，全部在瀏覽器裡跑。免安裝、免註冊，資料不會離開你的電腦或手機。</p>
-    <div class="coord">TWD97 / WGS84 · 開放原始碼 · 由生態調查現場需求長出來的工具</div>
+    <h1>Field-Box 田野調查小工具</h1>
   </div>
 </div>
 
 <section id="tools">
   <div class="wrap">
-    <div class="sec-head">
-      <h2>工具</h2>
-      <span class="count">五項，持續增加中</span>
-    </div>
-    <p class="sec-intro">每個工具都是獨立的網頁，開了就能用。手機在野外也跑得動。</p>
-
     <div class="tools">
       {% for tool in site.data.tools %}
       <a class="tool" href="{{ tool.url }}">
-        <div class="mark">{{ tool.mark }}</div>
-        <h3>{{ tool.name }}</h3>
-        <p class="zh">{{ tool.zh }}</p>
+        <img class="logo" src="{{ site.baseurl }}/assets/img/logos/{{ tool.logo }}" alt="" width="56" height="56">
+        <h2>{{ tool.name }}：{{ tool.zh }}</h2>
         <p>{{ tool.desc }}</p>
-        <div class="go">開啟工具</div>
+        <span class="go">開啟工具</span>
       </a>
       {% endfor %}
     </div>
-  </div>
-</section>
-
-<section class="course" id="course">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>QGIS 課程平台</h2>
-      <span class="count">野生動物保育所 · {{ site.lessons | size }} 篇</span>
-    </div>
-    <p class="sec-intro">從安裝到出圖的完整教學，附課程簡報與練習資料。照著做就能完成一張可以放進報告的地圖。</p>
-    <p class="more"><a href="{{ site.baseurl }}/qgis/">查看課程目錄 →</a></p>
   </div>
 </section>

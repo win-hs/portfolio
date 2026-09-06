@@ -20,7 +20,7 @@
 改說明文字就改 `desc` 那一行：
 
 ```yaml
-- mark: C
+- logo: coord-converter.png
   name: Coord-Converter
   zh: 座標批次轉換
   desc: 這一行就是網頁上顯示的說明文字。
@@ -29,13 +29,15 @@
 
 新增工具就複製一整段五行貼到檔案最後面，再改內容。
 
-- `mark`：格子左上角圓圈裡的字母，一個字
+- `logo`：logo 圖檔的檔名，圖檔放在 `assets/img/logos/`
 - `name`：英文名
-- `zh`：中文名
+- `zh`：中文名，網頁上顯示成「英文名：中文名」
 - `desc`：說明文字
 - `url`：工具網址，開頭要有斜線，例如 `/mappin/`
 
 段落之間空一行。前面的 `- ` 和每行開頭的兩個空格都不能刪。
+
+新增工具前要先把 logo 圖放進 repo：在 `assets/img/logos/` 按 Add file → Upload files 上傳，再把檔名填到 `logo` 那一行。logo 原稿在 `logo.pptx`，從 PowerPoint 另存成去背 PNG 即可。
 
 ---
 

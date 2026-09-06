@@ -1,28 +1,28 @@
-- mark: G
+- logo: gotime.png
   name: GoTime
   zh: 開工吉時
-  desc: 查詢適合動工的日期與時辰。
+  desc: 整合天氣預測功能，查詢適合開工的日期與時間。
   url: /gotime
 
-- mark: C
+- logo: coord-converter.png
   name: Coord-Converter
   zh: 座標批次轉換
-  desc: TWD97 二度分帶與 WGS84 經緯度互轉，支援整份 CSV 一次處理。
+  desc: TWD97 二度分帶與 WGS84 經緯度座標批次轉換。
   url: /coordinate-converter/
 
-- mark: T
+- logo: triangulation.png
   name: Triangulation
   zh: 三角定位
   desc: 輸入接收點位與方位角，推算追蹤個體的所在位置。
   url: /triangulation/
 
-- mark: B
+- logo: batch-triangulation.png
   name: BatchTriangulation
   zh: 批次三角定位
-  desc: 一次處理整季的無線電追蹤紀錄，輸出可直接匯入 QGIS 的點位檔。
+  desc: 匯入接受點位與方位角的csv檔案，推算出所有位置。
   url: /batch-triangulation/
 
-- mark: M
+- logo: mappin.png
   name: Mappin
   zh: 照片地圖標記
   desc: 讀取照片內的 GPS 資訊，把拍攝地點標到地圖上。
