@@ -1,5 +1,5 @@
 /* ---------- design tokens ---------- */
-.theme-light{
+:root{
   --bg:#FFFFFF;
   --panel:#F4F6F1;
   --ink:#16231B;
@@ -12,20 +12,6 @@
   --contour-solid:#3B62C0;
   --hover:#F1F4EE;
   --footer-bg:#E1E6DD;
-}
-.theme-dark{
-  --bg:#0E1110;
-  --panel:#171D19;
-  --ink:#E9EEE7;
-  --body:#A7B5AB;
-  --moss:#9FBCA8;
-  --moss-soft:#7C8F83;
-  --rule:#252C28;
-  --tape:#E0A81E;
-  --contour:#8A6438;
-  --contour-solid:#43619E;
-  --hover:#1B221D;
-  --footer-bg:#171D19;
 }
 
 *{box-sizing:border-box}
@@ -43,14 +29,14 @@ a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
 
 /* ---------- 背景等高線 ---------- */
-.contours{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.contours{display:none;position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .contours svg{position:absolute;width:min(34vw,420px);height:auto}
 .contours .tl{top:64px;left:0}
 .contours .br{bottom:0;right:0}
 .contours .dash{fill:none;stroke:var(--contour);stroke-width:1.4;stroke-dasharray:8 7;opacity:.6}
 .contours .solid{fill:none;stroke:var(--contour-solid);stroke-width:2;opacity:.55}
 
-.theme-light .contours{display:none}
+.page-course .contours{display:block}
 .topbar,.hero,section,article,footer{position:relative;z-index:1}
 
 /* ---------- nav ---------- */

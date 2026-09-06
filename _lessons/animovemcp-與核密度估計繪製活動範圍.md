@@ -1,6 +1,6 @@
 ---
 layout: lesson
-theme: dark
+body_class: page-course
 title: Animove：MCP 與核密度估計繪製活動範圍
 unit: skills
 order: 5

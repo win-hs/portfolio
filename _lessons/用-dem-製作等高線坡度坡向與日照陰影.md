@@ -1,6 +1,6 @@
 ---
 layout: lesson
-theme: dark
+body_class: page-course
 title: 用 DEM 製作等高線、坡度、坡向與日照陰影
 unit: basics
 order: 8

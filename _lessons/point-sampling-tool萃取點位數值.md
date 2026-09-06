@@ -1,6 +1,6 @@
 ---
 layout: lesson
-theme: dark
+body_class: page-course
 title: Point Sampling Tool：萃取點位數值
 unit: skills
 order: 4

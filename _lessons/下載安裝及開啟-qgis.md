@@ -1,6 +1,6 @@
 ---
 layout: lesson
-theme: dark
+body_class: page-course
 title: 下載、安裝及開啟 QGIS
 unit: basics
 order: 1

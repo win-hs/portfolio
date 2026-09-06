@@ -1,6 +1,6 @@
 ---
 layout: lesson
-theme: dark
+body_class: page-course
 title: 更改圖層座標格式（CRS）
 unit: basics
 order: 4
