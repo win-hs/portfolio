@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: 用 DEM 製作等高線、坡度、坡向與日照陰影
+seo_title: 用 DEM 製作等高線、坡度、坡向與日照陰影｜QGIS 課程 · Field-Box
+desc: 手上有一份數值高程模型（DEM），就能做出等高線、坡度、坡向和日照陰影四種圖層。都在 Raster 選單底下，參數多半維持預設即可。
 unit: basics
 order: 8
 permalink: /qgis/用-dem-製作等高線坡度坡向與日照陰影/

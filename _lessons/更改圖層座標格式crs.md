@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: 更改圖層座標格式（CRS）
+seo_title: 更改圖層座標格式（CRS）｜QGIS 課程 · Field-Box
+desc: 圖層的座標系統不對，疊起來就會錯位。右鍵圖層選 Export、Save Features as，在 CRS 欄位挑新的座標格式另存一份就好。
 unit: basics
 order: 4
 permalink: /qgis/更改圖層座標格式crs/

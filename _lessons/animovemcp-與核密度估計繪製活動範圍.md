@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: Animove：MCP 與核密度估計繪製活動範圍
+seo_title: Animove：MCP 與核密度估計繪製活動範圍｜QGIS 課程 · Field-Box
+desc: 用追蹤點位畫出動物的活動範圍。最小凸多邊形（MCP）與核密度估計（KDE）兩種方法的完整操作流程，並附上原始文獻出處。
 unit: skills
 order: 5
 permalink: /qgis/animovemcp-與核密度估計繪製活動範圍/

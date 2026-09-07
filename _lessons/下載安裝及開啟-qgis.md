@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: 下載、安裝及開啟 QGIS
+seo_title: 下載、安裝及開啟 QGIS｜QGIS 課程 · Field-Box
+desc: QGIS 官網有最新版和最穩定版兩種，沒特殊需求就下載最穩定的長期支援版。安裝時第一個選項打勾就好，下面三個是國外資料集，一般用不到。
 unit: basics
 order: 1
 permalink: /qgis/下載安裝及開啟-qgis/

@@ -3,8 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="description" content="{{ site.description }}">
+<title>{{ page.seo_title }}</title>
+<meta name="description" content="{{ page.desc }}">
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | uri_escape }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="{{ page.seo_title }}">
+<meta property="og:description" content="{{ page.desc }}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | uri_escape }}">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 <body class="{{ page.body_class }}">

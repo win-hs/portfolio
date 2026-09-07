@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: Point Sampling Tool：萃取點位數值
+seo_title: Point Sampling Tool：萃取點位數值｜QGIS 課程 · Field-Box
+desc: 手上一堆點位，想知道每個點的海拔、坡度，或落在哪一個分區裡。裝 Point Sampling Tool 外掛，選好點位圖層和要萃取的圖層就能一次帶出來。
 unit: skills
 order: 4
 permalink: /qgis/point-sampling-tool萃取點位數值/

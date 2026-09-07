@@ -93,7 +93,9 @@ def convert(les):
     return "\n".join(out).strip() + "\n"
 
 for les in lessons:
-    fm = dict(layout="lesson", body_class="page-course", title=les["fm"]["title"], unit=les["fm"]["unit"],
+    fm = dict(layout="lesson", body_class="page-course", title=les["fm"]["title"],
+              seo_title="%s｜QGIS 課程 · Field-Box" % les["fm"]["title"],
+              desc=les["fm"]["desc"], unit=les["fm"]["unit"],
               order=les["fm"]["order"], permalink="/qgis/%s/" % les["slug"],
               hackmd=les["fm"]["hackmd"])
     txt = "---\n" + yaml.dump(fm, allow_unicode=True, sort_keys=False) + "---\n\n" + convert(les)

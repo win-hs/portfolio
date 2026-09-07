@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: 用 Quick Map Services 加入 OSM 底圖
+seo_title: 用 Quick Map Services 加入 OSM 底圖｜QGIS 課程 · Field-Box
+desc: 裝上 QuickMapServices 外掛，就能一鍵載入 OpenStreetMap 底圖。要注意這類網路圖磚是圖片檔，沒辦法拿來做分析或下載資料。
 unit: skills
 order: 2
 permalink: /qgis/用-quick-map-services-加入-osm-底圖/

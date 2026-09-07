@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: 把 Excel 或 CSV 資料匯入 QGIS
+seo_title: 把 Excel 或 CSV 資料匯入 QGIS｜QGIS 課程 · Field-Box
+desc: 野外記錄多半躺在 Excel 裡。先另存成 CSV（有中文請選 UTF-8），再用 Add Delimited Text Layer 指定 XY 欄位和座標系統，點位就會出現在圖上。
 unit: basics
 order: 11
 permalink: /qgis/把-excel-或-csv-資料匯入-qgis/

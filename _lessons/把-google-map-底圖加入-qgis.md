@@ -2,6 +2,8 @@
 layout: lesson
 body_class: page-course
 title: 把 Google Map 底圖加入 QGIS
+seo_title: 把 Google Map 底圖加入 QGIS｜QGIS 課程 · Field-Box
+desc: 在 XYZ Tiles 新增連線、貼上網址，就能把 Google 的道路圖、地形圖或衛星影像當底圖用。四種底圖的網址都整理在文內。
 unit: skills
 order: 1
 permalink: /qgis/把-google-map-底圖加入-qgis/
